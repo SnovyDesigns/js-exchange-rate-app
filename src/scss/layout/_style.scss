@@ -1,0 +1,200 @@
+body {
+  display: flex;
+  flex-direction: column;
+  @include center;
+  @include min-h(100vh);
+  background: linear-gradient(0deg, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.app {
+  background: linear-gradient(
+    270deg,
+    $c-blue-light 0%,
+    $c-blue 27.04%,
+    $c-blue-dark 101.96%
+  );
+  @include brr(1);
+  box-shadow: 0.5rem 0.5rem 2rem rgba($color: $c-blue-dark, $alpha: 0.25);
+
+  &__top {
+    padding: 0 8rem 2rem;
+  }
+
+  &__logo-wrapper {
+    text-align: center;
+    color: $c-white;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    .animate-scale {
+      transform-origin: 30% 50%;
+      animation: logoScale 3s ease-in infinite;
+    }
+  }
+
+  &__title {
+    font-weight: $fw-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: $fw-light;
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+    font-weight: $fw-regular;
+    color: $c-white;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  &__currency {
+    display: flex;
+    padding: 2rem 0;
+    align-items: center;
+    position: relative;
+  }
+
+  &__currency-select {
+    appearance: none;
+    padding: 1rem 2rem 1rem 1rem;
+    font-size: 2rem;
+    border: 0;
+    background: transparent;
+    color: $c-white;
+    background-image: iurl('arrow.svg');
+    background-position: 85% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &__currency-input {
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    font-size: 3.6rem;
+    text-align: right;
+    padding: 0;
+    width: 28rem;
+    color: $c-white;
+  }
+
+  &__currency-symbol {
+    @include absolute(top 2.4rem right 0);
+    font-weight: $fw-light;
+    transform: translateX(100%);
+    color: $c-white;
+  }
+
+  &__currency-swap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: block;
+      @include size(34rem, 1px);
+      background: rgba($color: $c-white, $alpha: 0.5);
+    }
+
+    .btn {
+      padding: 1.4rem;
+      border: 0;
+      @include brr(50%);
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.140767);
+      cursor: pointer;
+      @include trans(0.3);
+      background: $c-white;
+      transform: translateX(2.2rem);
+
+      &:hover {
+        background: rgba($color: $c-white, $alpha: 0.9);
+      }
+    }
+  }
+
+  &__rate-waves {
+    @include size(100%, 12rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__rate-wave {
+    @include absolute(left 0 bottom 0);
+    width: 100%;
+    height: 10rem;
+    background: iurl('wave.png');
+    background-size: 100rem 10rem;
+
+    &--1 {
+      animation: wave 30s linear infinite;
+      z-index: 10;
+      animation-delay: 0s;
+    }
+
+    &--2 {
+      animation: wave2 15s linear infinite;
+      z-index: 9;
+      opacity: 0.5;
+      animation-delay: -5s;
+      bottom: 1rem;
+    }
+
+    &--3 {
+      animation: wave 30s linear infinite;
+      z-index: 8;
+      opacity: 0.2;
+      animation-delay: -5s;
+      bottom: 1.5rem;
+    }
+
+    &--4 {
+      animation: wave2 5s linear infinite;
+      z-index: 7;
+      opacity: 0.7;
+      animation-delay: -5s;
+      bottom: 2rem;
+    }
+  }
+
+  &__rate-bg {
+    background: $c-white;
+    text-align: center;
+    padding-bottom: 2rem;
+    color: $c-blue-text;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: -2px;
+  }
+
+  &__rate-info {
+    margin-bottom: 1rem;
+    font-weight: $fw-light;
+  }
+
+  &__rate-value {
+    font-weight: $fw-bold;
+    font-size: 1.8rem;
+  }
+}
+
+.currency-flag {
+  margin-right: 1rem;
+}
+
+.footer {
+  color: $c-blue-text;
+  font-weight: $fw-light;
+  @include absolute(bottom 1rem left 50%);
+  transform: translateX(-50%);
+}

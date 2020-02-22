@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  outline: none;
 }
 
 // ----------------------------------------------
@@ -35,6 +36,17 @@ img {
 }
 
 ::selection {
-  background-color: blue;
+  background-color: #1899de;
   color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }

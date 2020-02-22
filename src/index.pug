@@ -1,3 +1,5 @@
+include ./includes/main
+
 doctype html
 html(lang="en")
   head
@@ -8,132 +10,140 @@ html(lang="en")
     link(href=require("./favicon.ico"), rel='shortcut icon')
   body
     .app
-      .app__logo-wrapper
-        .app__logo
-        h1.app__title Kurrency
-        h2.app_subtitle Easy Exchange
-      h3.app__desc Choose the currency and the amounts to get the exchange rate
-      .app__container
-        .app__currency
-          .currency-flag.currency-flag-pln
-          select.app__currency-select#currency-one
-            option(value='AED') AED
-            option(value='ARS') ARS
-            option(value='AUD') AUD
-            option(value='BGN') BGN
-            option(value='BRL') BRL
-            option(value='BSD') BSD
-            option(value='CAD') CAD
-            option(value='CHF') CHF
-            option(value='CLP') CLP
-            option(value='CNY') CNY
-            option(value='COP') COP
-            option(value='CZK') CZK
-            option(value='DKK') DKK
-            option(value='DOP') DOP
-            option(value='EGP') EGP
-            option(value='EUR') EUR
-            option(value='FJD') FJD
-            option(value='GBP') GBP
-            option(value='GTQ') GTQ
-            option(value='HKD') HKD
-            option(value='HRK') HRK
-            option(value='HUF') HUF
-            option(value='IDR') IDR
-            option(value='ILS') ILS
-            option(value='INR') INR
-            option(value='ISK') ISK
-            option(value='JPY') JPY
-            option(value='KRW') KRW
-            option(value='KZT') KZT
-            option(value='MXN') MXN
-            option(value='MYR') MYR
-            option(value='NOK') NOK
-            option(value='NZD') NZD
-            option(value='PAB') PAB
-            option(value='PEN') PEN
-            option(value='PHP') PHP
-            option(value='PKR') PKR
-            option(value='PLN', selected='') PLN
-            option(value='PYG') PYG
-            option(value='RON') RON
-            option(value='RUB') RUB
-            option(value='SAR') SAR
-            option(value='SEK') SEK
-            option(value='SGD') SGD
-            option(value='THB') THB
-            option(value='TRY') TRY
-            option(value='TWD') TWD
-            option(value='UAH') UAH
-            option(value='USD') USD
-            option(value='UYU') UYU
-            option(value='VND') VND
-            option(value='ZAR') ZAR
-          input#amount-one.app__currency-input(type="number", placeholder="0", value="1")
-          span.app__currency-symbol PLN
-        .app__currency-swap
-          button#swap.btn
-            img(src=require("./img/arrows-icon.svg"))
-        .app__currency
-          .currency-flag.currency-flag-usd
-          select.app__currency-select#currency-two
-            option(value='AED') AED
-            option(value='ARS') ARS
-            option(value='AUD') AUD
-            option(value='BGN') BGN
-            option(value='BRL') BRL
-            option(value='BSD') BSD
-            option(value='CAD') CAD
-            option(value='CHF') CHF
-            option(value='CLP') CLP
-            option(value='CNY') CNY
-            option(value='COP') COP
-            option(value='CZK') CZK
-            option(value='DKK') DKK
-            option(value='DOP') DOP
-            option(value='EGP') EGP
-            option(value='EUR') EUR
-            option(value='FJD') FJD
-            option(value='GBP') GBP
-            option(value='GTQ') GTQ
-            option(value='HKD') HKD
-            option(value='HRK') HRK
-            option(value='HUF') HUF
-            option(value='IDR') IDR
-            option(value='ILS') ILS
-            option(value='INR') INR
-            option(value='ISK') ISK
-            option(value='JPY') JPY
-            option(value='KRW') KRW
-            option(value='KZT') KZT
-            option(value='MXN') MXN
-            option(value='MYR') MYR
-            option(value='NOK') NOK
-            option(value='NZD') NZD
-            option(value='PAB') PAB
-            option(value='PEN') PEN
-            option(value='PHP') PHP
-            option(value='PKR') PKR
-            option(value='PLN') PLN
-            option(value='PYG') PYG
-            option(value='RON') RON
-            option(value='RUB') RUB
-            option(value='SAR') SAR
-            option(value='SEK') SEK
-            option(value='SGD') SGD
-            option(value='THB') THB
-            option(value='TRY') TRY
-            option(value='TWD') TWD
-            option(value='UAH') UAH
-            option(value='USD', selected='') USD
-            option(value='UYU') UYU
-            option(value='VND') VND
-            option(value='ZAR') ZAR
-          input#amount-two.app__currency-input(type="number", placeholder="0", value="1")
-          span.app__currency-symbol $
+      .app__top
+        .app__logo-wrapper
+          .app__logo
+            +logo-svg
+          h1.app__title Kurrency
+          h2.app__subtitle Easy Exchange
+        h3.app__desc Choose the currency and the amounts to get the exchange rate
+        .app__container
+          .app__currency
+            .currency-flag.currency-flag-xl.currency-flag-pln
+            select.app__currency-select#currency-one
+              option(value='AED') AED
+              option(value='ARS') ARS
+              option(value='AUD') AUD
+              option(value='BGN') BGN
+              option(value='BRL') BRL
+              option(value='BSD') BSD
+              option(value='CAD') CAD
+              option(value='CHF') CHF
+              option(value='CLP') CLP
+              option(value='CNY') CNY
+              option(value='COP') COP
+              option(value='CZK') CZK
+              option(value='DKK') DKK
+              option(value='DOP') DOP
+              option(value='EGP') EGP
+              option(value='EUR') EUR
+              option(value='FJD') FJD
+              option(value='GBP') GBP
+              option(value='GTQ') GTQ
+              option(value='HKD') HKD
+              option(value='HRK') HRK
+              option(value='HUF') HUF
+              option(value='IDR') IDR
+              option(value='ILS') ILS
+              option(value='INR') INR
+              option(value='ISK') ISK
+              option(value='JPY') JPY
+              option(value='KRW') KRW
+              option(value='KZT') KZT
+              option(value='MXN') MXN
+              option(value='MYR') MYR
+              option(value='NOK') NOK
+              option(value='NZD') NZD
+              option(value='PAB') PAB
+              option(value='PEN') PEN
+              option(value='PHP') PHP
+              option(value='PKR') PKR
+              option(value='PLN', selected='') PLN
+              option(value='PYG') PYG
+              option(value='RON') RON
+              option(value='RUB') RUB
+              option(value='SAR') SAR
+              option(value='SEK') SEK
+              option(value='SGD') SGD
+              option(value='THB') THB
+              option(value='TRY') TRY
+              option(value='TWD') TWD
+              option(value='UAH') UAH
+              option(value='USD') USD
+              option(value='UYU') UYU
+              option(value='VND') VND
+              option(value='ZAR') ZAR
+            input#amount-one.app__currency-input(type="number", placeholder="0", value="1")
+            span.app__currency-symbol PLN
+          .app__currency-swap
+            button#swap.btn
+              img(src=require("./img/arrows-icon.svg"))
+          .app__currency
+            .currency-flag.currency-flag-xl.currency-flag-usd
+            select.app__currency-select#currency-two
+              option(value='AED') AED
+              option(value='ARS') ARS
+              option(value='AUD') AUD
+              option(value='BGN') BGN
+              option(value='BRL') BRL
+              option(value='BSD') BSD
+              option(value='CAD') CAD
+              option(value='CHF') CHF
+              option(value='CLP') CLP
+              option(value='CNY') CNY
+              option(value='COP') COP
+              option(value='CZK') CZK
+              option(value='DKK') DKK
+              option(value='DOP') DOP
+              option(value='EGP') EGP
+              option(value='EUR') EUR
+              option(value='FJD') FJD
+              option(value='GBP') GBP
+              option(value='GTQ') GTQ
+              option(value='HKD') HKD
+              option(value='HRK') HRK
+              option(value='HUF') HUF
+              option(value='IDR') IDR
+              option(value='ILS') ILS
+              option(value='INR') INR
+              option(value='ISK') ISK
+              option(value='JPY') JPY
+              option(value='KRW') KRW
+              option(value='KZT') KZT
+              option(value='MXN') MXN
+              option(value='MYR') MYR
+              option(value='NOK') NOK
+              option(value='NZD') NZD
+              option(value='PAB') PAB
+              option(value='PEN') PEN
+              option(value='PHP') PHP
+              option(value='PKR') PKR
+              option(value='PLN') PLN
+              option(value='PYG') PYG
+              option(value='RON') RON
+              option(value='RUB') RUB
+              option(value='SAR') SAR
+              option(value='SEK') SEK
+              option(value='SGD') SGD
+              option(value='THB') THB
+              option(value='TRY') TRY
+              option(value='TWD') TWD
+              option(value='UAH') UAH
+              option(value='USD', selected='') USD
+              option(value='UYU') UYU
+              option(value='VND') VND
+              option(value='ZAR') ZAR
+            input#amount-two.app__currency-input(type="number", placeholder="0", value="1")
+            span.app__currency-symbol $
       .app__rate
-        p Selected exchange rate:
-        #rate 1 PLN = 0.252255 USD
+        .app__rate-waves
+          .app__rate-wave.app__rate-wave--1
+          .app__rate-wave.app__rate-wave--2
+          .app__rate-wave.app__rate-wave--3
+          .app__rate-wave.app__rate-wave--4
+        .app__rate-bg
+          p.app__rate-info Selected exchange rate:
+          p#rate.app__rate-value 1 PLN = 0.252255 USD
 
     footer.footer
       p Layout based on Currency Exchange Concept App designed by Rubi Nguyen
