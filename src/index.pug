@@ -19,7 +19,7 @@ html(lang="en")
         h3.app__desc Choose the currency and the amounts to get the exchange rate
         .app__container
           .app__currency
-            .currency-flag.currency-flag-xl.currency-flag-pln
+            #flag-one.currency-flag.currency-flag-xl
             select.app__currency-select#currency-one
               option(value='AED') AED
               option(value='ARS') ARS
@@ -74,12 +74,12 @@ html(lang="en")
               option(value='VND') VND
               option(value='ZAR') ZAR
             input#amount-one.app__currency-input(type="number", placeholder="0", value="1")
-            span.app__currency-symbol PLN
+            span#symbol-one.app__currency-symbol
           .app__currency-swap
             button#swap.btn
               img(src=require("./img/arrows-icon.svg"))
           .app__currency
-            .currency-flag.currency-flag-xl.currency-flag-usd
+            #flag-two.currency-flag.currency-flag-xl
             select.app__currency-select#currency-two
               option(value='AED') AED
               option(value='ARS') ARS
@@ -134,7 +134,7 @@ html(lang="en")
               option(value='VND') VND
               option(value='ZAR') ZAR
             input#amount-two.app__currency-input(type="number", placeholder="0", value="1")
-            span.app__currency-symbol $
+            span#symbol-two.app__currency-symbol
       .app__rate
         .app__rate-waves
           .app__rate-wave.app__rate-wave--1
@@ -143,7 +143,7 @@ html(lang="en")
           .app__rate-wave.app__rate-wave--4
         .app__rate-bg
           p.app__rate-info Selected exchange rate:
-          p#rate.app__rate-value 1 PLN = 0.252255 USD
+          p#rate.app__rate-value
 
     footer.footer
       p Layout based on Currency Exchange Concept App designed by Rubi Nguyen
