@@ -56,6 +56,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "currency-flags": "^2.1.1",
+    "currency-symbol-map": "^4.0.4",
     "gsap": "^3.1.1",
     "scrollmagic": "^2.0.7"
   },
